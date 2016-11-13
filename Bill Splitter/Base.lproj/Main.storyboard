@@ -28,12 +28,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vnP-oL-l09">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="2" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="vnP-oL-l09">
                                 <rect key="frame" x="14" y="66" width="347" height="31"/>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0K-SI-grd">
                                 <rect key="frame" x="164" y="104" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="calculateSplitAmount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QzM-B7-gh2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZJ-hL-oD8">
                                 <rect key="frame" x="16" y="142" width="343" height="21"/>
@@ -58,6 +61,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="vnP-oL-l09" secondAttribute="trailing" id="vvn-hA-kr8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="B0K-SI-grd" id="Inv-2Q-GuI"/>
+                        <outlet property="label" destination="PZJ-hL-oD8" id="rKM-Zt-fCB"/>
+                        <outlet property="slider" destination="vnP-oL-l09" id="sIw-MJ-0ts"/>
+                        <outlet property="textField" destination="ZZE-ph-4Ak" id="0Wt-um-rMd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

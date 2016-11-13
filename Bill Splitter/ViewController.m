@@ -10,6 +10,11 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UILabel *label;
+
 @end
 
 @implementation ViewController
@@ -19,6 +24,11 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (IBAction)calculateSplitAmount:(id)sender {
+    NSDecimalNumber * billAmt = [NSDecimalNumber decimalNumberWithString:self.textField.text];
+    NSDecimalNumber * numSplitters = [NSDecimalNumber decimalNumberWithMantissa:self.slider.value exponent:0 isNegative:NO];
+    self.label.text = [NSString stringWithFormat:@"%@", [billAmt decimalNumberByDividingBy:numSplitters]];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
